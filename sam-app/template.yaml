@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: SAM template for my resume
+
+Globals:
+  Function:
+    Timeout: 3
+    Runtime: python3.8
+  Api:
+    Cors:
+      AllowMethods: "'GET,OPTIONS'"
+      AllowHeaders: "'*'"
+      AllowOrigin: "'*'"
+
+Resources:
+  CounterFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: ./counter
+      Handler: counter.lambda_handler
+      Policies: AmazonDynamoDBFullAccess
+      Events:
+        CounterUpdate:
+          Type: Api 
+          Properties:
+            Path: /counter
+            Method: get
+
+  QuickyHaCounterDynamodb:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        -
+          AttributeName: "Visits"
+          AttributeType: "N"
+      KeySchema:
+        -
+          AttributeName: "Visits"
+          KeyType: "HASH"
+      ProvisionedThroughput:
+        ReadCapacityUnits: "1"
+        WriteCapacityUnits: "1"
+      TableName: "visitorcounter"
+
+  
+
+  
