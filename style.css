@@ -185,6 +185,10 @@ li {
   margin-left: 20px;
 }
 
+p{
+  margin-bottom: 5px;
+}
+
 
 @media only screen and (max-width:768px){
   section{

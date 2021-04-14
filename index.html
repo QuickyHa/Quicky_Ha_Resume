@@ -131,16 +131,17 @@
               Jan 2021
             </div>
           </div> <!-- end job-title container -->
-          <p>This website you are currently viewing! This website is the end product of Forrest Brazeal's
+          <p>The website you are currently viewing! This website is the end product of Forrest Brazeal's
             cloud resume challenge. A secure severless responsive website that utilizes AWS cloud services by employing 
             infrastructure as code, includes a dynamic visitor counter, and has a CI/CD pipeline for easy
             automated deployment.
-              <li>Created an S3 bucket to store necessary website files to be deployed online as a static website</li>
+              <li>Created an S3 bucket to store necessary website files to be deployed online as a static website.</li>
               <li>Purchased and made a custom domain name with Route53, generated a SSL certificate in AWS Certificate Manager, and 
                 created a CloudFront distrubtion to allow the site to be served securely over HTTPS.
               </li>
-              <li>Built the visitor counter with AWS API Gateway, Lambda, and DynamoDB</li>
-              <li>Deployed the above through CloudFormation</li>
+              <li>Implemented the visitor counter using AWS API Gateway, Lambda, and DynamoDB which is then provisioned using
+                CloudFormation.
+              </li>
               <li>Set up a pipeline in CodePipeline allowing easy automated deployment to the S3 bucket whenever new
               code is pushed to Git</li>            
           </p>
@@ -157,7 +158,7 @@
             </div>
           </div> <!-- end job-title container -->
           <p>An Alexa skill that allows me to check how many people visited my resume website.</p>
-            <li>Makes a GET request to the same DynamoDB API from the above website to get visitor data.</li>
+            <li>Makes a GET request to the same DynamoDB API from the above website to obtain visitor count data.</li>
         </div> <!-- end job -->
 
     </section>
@@ -176,7 +177,7 @@
 
           <ul>
             <li>CloudFormation</li>
-            <li>CloudFront</li>
+            <li>CodePipeline</li>
             <li>HTML</li>
             <li>CSS</li>
           </ul>
